@@ -1,0 +1,19 @@
+{
+    "name": "dialibatoul-marakhib/auchan",
+    "autoload": {
+        "psr-4": {
+            "DialibatoulMarakhib\\Auchan\\": "src/",
+            "App\\Entite\\": "src/entites/",
+            "App\\Repository\\": "src/repository/",
+            "App\\Services\\": "src/services/",
+            "App\\Config\\": "config/core/",
+            "App\\Controller\\": "src/controllers/",
+            "App\\Public\\": "public/"
+        }
+    },
+    "authors": [{
+        "name": "khoussngom",
+        "email": "khoussn@gmail.com"
+    }],
+    "require": {}
+}
