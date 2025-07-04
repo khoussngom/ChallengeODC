@@ -33,11 +33,18 @@ class CommandeController extends AbstractController
     // }
 
     public function create(): void{
+        $this->requireAuth();
         $this->renderHtml('Commande/enregistrerCommande.php');
     }
 
-    public function index(): void{
-        $this->renderHtml('Commande/listerCommande.php');
+    public function index(): void
+    {
+        $this->requireAuth();
+
+        $pdo = \App\Repository\Repositorie::ConnectToDatabase();
+        $commandeRepo = new \App\Repository\CommandeRepository($pdo);
+        $commandes = $commandeRepo->findAllAvecDetails();
+        $this->renderHtml('Commande/listerCommande.php', ['commandes' => $commandes]);
     }
 
 

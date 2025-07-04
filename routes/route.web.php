@@ -1,6 +1,7 @@
 <?php
 use App\Controller\CommandeController;
 use App\Controller\FactureController;
+use App\Controller\ControllerSecurity;
 
 return $routes = [
     '/' => [
@@ -18,5 +19,9 @@ return $routes = [
     '/generer_facture' => [
         'controller' => FactureController::class,
         'method' => 'show'
+    ],
+    '/login' => [
+        'controller' => ControllerSecurity::class,
+        'method' => 'store'
     ],
 ];

@@ -7,10 +7,12 @@ use App\Config\AbstractController;
 class FactureController extends AbstractController
 {
         public function show(): void{
+        $this->requireAuth();
         $this->renderHtml('Commande/facture.php');
         }
 
         public function index(): void{
+        $this->requireAuth();
             require_once __DIR__ . '/../../template/Commande/';
         }
         

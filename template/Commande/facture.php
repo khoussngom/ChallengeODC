@@ -1,6 +1,6 @@
 
-    <!-- Navbar -->
-    
+
+
     <main class="max-w-5xl mx-auto mt-8 p-8">
       <div class="flex justify-between items-start mb-6">
         <div>
@@ -45,7 +45,7 @@
           </tbody>
         </table>
       </div>
-      <!-- Infos sous le tableau -->
+
       <div class="flex flex-wrap gap-8 mt-4 mb-8 text-sm justify-end">
         <div>
           <p><span class="font-semibold">Téléphone :</span> 777777777</p>
