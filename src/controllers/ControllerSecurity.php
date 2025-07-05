@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Controller;
-
+use App\Services\SecuriteServices;
 use App\Config\AbstractController;
-use App\Repository\Repositorie;
-use App\Repository\PersonneRepository;
+
 
 class ControllerSecurity extends AbstractController
 {
+
+    
+    public function __construct($layout = null)
+    {
+            parent::__construct('./../template/layout/security/securityLayout.html.php');
+    }
     public function create(): void{
-        $this->renderHtml('login.php');
+        self::renderHtml('login.php');
     }
 
     public function index(): void{
@@ -23,10 +28,9 @@ class ControllerSecurity extends AbstractController
                 $login = $_POST['login'] ?? '';
                 $password = $_POST['password'] ?? '';
 
-                $pdo = Repositorie::ConnectToDatabase();
-                $personneRepo = new PersonneRepository($pdo);
-                $vendeur = $personneRepo->findLogin($login, $password);
-
+                $securite = new SecuriteServices();
+                $vendeur = $securite->Login($login, $password);
+                
                 if ($vendeur) {
                     session_start();
                     $_SESSION['user'] = $vendeur['login'];
@@ -34,15 +38,28 @@ class ControllerSecurity extends AbstractController
                     exit;
                 } else {
                     $error = "Identifiants invalides";
-                    require_once './../template/login.php';
+                    $this->renderHtml('login.php');
                 }
             } else {
-                require_once './../template/login.php';
+                    self::renderHtml('login.php');
             }
         }
+
+        public function logout()
+        {
+            $this->deconnexion();
+        }
+
         public function update(): void{}
         public function show(): void{}
         public function edit(): void{}
-        public function destroy(): void{} 
+        public function destroy(): void{}
+
+        public function renderHtml(string $view, $data = [])
+        {
+            
+            $this->layout ;
+            parent::renderHtml($view,$data);
+        }
     
 }

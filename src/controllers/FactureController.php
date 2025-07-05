@@ -8,7 +8,7 @@ class FactureController extends AbstractController
 {
         public function show(): void{
         $this->requireAuth();
-        $this->renderHtml('Commande/facture.php');
+        self::renderHtml('Commande/facture.php');
         }
 
         public function index(): void{
@@ -24,5 +24,13 @@ class FactureController extends AbstractController
         public function store(): void{}
         public function update(): void{}
         public function edit(): void{}
-        public function destroy(): void{} 
+        public function destroy(): void{}
+
+        public function renderHtml(string $view, $data = [])
+        {
+            require_once './../template/layout/base.layout.php';
+            parent::renderHtml($view,$data);
+        }
+
+
 }

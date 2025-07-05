@@ -24,4 +24,13 @@ return $routes = [
         'controller' => ControllerSecurity::class,
         'method' => 'store'
     ],
+    '/deconnexion' => [
+        'controller' => ControllerSecurity::class,
+        'method' => 'logout'
+    ],
+    
+    '/valider_commande' => [
+        'controller' => CommandeController::class,
+        'method' => 'validerCommande'
+    ],
 ];

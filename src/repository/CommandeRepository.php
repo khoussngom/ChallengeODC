@@ -38,7 +38,7 @@ class CommandeRepository extends Repositorie
 
     public function findAllAvecDetails(): array
     {
-        $sql = "SELECT 
+        $sql = "SELECT
                     c.id AS numero,
                     c.date,
                     p.nom AS client,

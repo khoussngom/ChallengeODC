@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+</head> -->
 
-<body class="h-screen bg-gradient-to-br from-orange-100 via-yellow-50 to-orange-200 flex items-center justify-center p-4">
 
+<div class="h-screen bg-gradient-to-br from-orange-100 via-yellow-50 to-orange-200 flex items-center justify-center p-4">
 
     <div class="w-full  h-full max-w-6xl bg-white rounded-3xl shadow-2xl overflow-hidden">
         <div class="flex min-h-[650px]">
@@ -85,8 +85,8 @@
         </div>
     </div>
 
-</body>
+</di>
 
 
 
-</html>
+<!-- </html>  -->

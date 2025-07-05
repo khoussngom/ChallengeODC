@@ -3,12 +3,15 @@
 namespace App\Controller;
 
 use App\Config\AbstractController;
-// use App\Repository\CommandeRepository;
+use App\Repository\Repositorie;
+
+use App\Repository\CommandeRepository;
 // use App\Services\CommandeService;
 
 class CommandeController extends AbstractController
 {
-    // private CommandeService $commandeService;
+
+    
 
     // public function __construct()
     // {
@@ -32,26 +35,39 @@ class CommandeController extends AbstractController
     //     return $this->commandeService->getCommandeById($id);
     // }
 
+    
     public function create(): void{
         $this->requireAuth();
-        $this->renderHtml('Commande/enregistrerCommande.php');
+        self::renderHtml('Commande/enregistrerCommande.php');
     }
 
     public function index(): void
     {
         $this->requireAuth();
 
-        $pdo = \App\Repository\Repositorie::ConnectToDatabase();
-        $commandeRepo = new \App\Repository\CommandeRepository($pdo);
+        $pdo =Repositorie::ConnectToDatabase();
+        $commandeRepo = new CommandeRepository($pdo);
         $commandes = $commandeRepo->findAllAvecDetails();
-        $this->renderHtml('Commande/listerCommande.php', ['commandes' => $commandes]);
+        self::renderHtml('Commande/listerCommande.php', ['commandes' => $commandes]);
     }
-
+    
+    public function validerCommande()
+    {
+        $this->requireAuth();
+        header('Location: /generer_facture');
+        exit;
+    }
 
         public function store(): void{}
         public function update(): void{}
         public function show(): void{}
         public function edit(): void{}
-        public function destroy(): void{} 
+        public function destroy(): void{}
+
+        public function renderHtml(string $view, $data = [])
+        {
+            // require_once './../template/layout/base.layout.php';
+            parent::renderHtml($view,$data);
+        }
     
 }

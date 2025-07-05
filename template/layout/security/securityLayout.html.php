@@ -9,11 +9,6 @@
 </head>
 
 <body class="min-h-screen bg-green-900 text-white">
-
-    <?php
-            require_once '../template/layout/partials/header.html.php';
-    ?>
-
     <? echo $contentForLayout ?>
 </body>
 </html>
