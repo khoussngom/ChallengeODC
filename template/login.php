@@ -46,8 +46,8 @@
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-600 mb-2">Password</label>
-                            <input 
-                                type="password" 
+                            <input
+                                type="password"
                                 name="password"
                                 class="w-full  text-black  px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50"
                                 placeholder="Mot de passe"

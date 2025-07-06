@@ -76,7 +76,7 @@
             <div class="text-xl font-semibold">
                 Total: <span class="text-green-400">61 200 fcfa</span>
             </div>
-            <a href="/valider_commande"><button class="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-3 rounded-lg transition-colors green-glow">
+            <a href="<?= APP_URL ?>/valider_commande"><button class="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-3 rounded-lg transition-colors green-glow">
                 Valider commande
             </button></a> 
         </div>

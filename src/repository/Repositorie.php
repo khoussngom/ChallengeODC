@@ -19,15 +19,15 @@ abstract class Repositorie
         try {
             $dsn = sprintf(
                 "mysql:host=%s;port=%s;dbname=%s",
-                'localhost',
-                3306,
-                'Auchan',
+                getenv('DB_HOST'),
+                getenv('DB_PORT'),
+                getenv('DB_NAME'),
             );
 
             $pdo = new PDO(
                 $dsn,
-                'marakhib',
-                'Marakhib',
+                getenv('DB_USER'),
+                getenv('DB_PASS'),
                 [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

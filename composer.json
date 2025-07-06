@@ -15,5 +15,7 @@
         "name": "khoussngom",
         "email": "khoussn@gmail.com"
     }],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
 }

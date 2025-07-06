@@ -66,7 +66,6 @@ class CommandeController extends AbstractController
 
         public function renderHtml(string $view, $data = [])
         {
-            // require_once './../template/layout/base.layout.php';
             parent::renderHtml($view,$data);
         }
     

@@ -3,7 +3,8 @@
     <div class="flex justify-between items-center mb-4">
         <h1 class="text-2xl font-bold">Liste des Commandes</h1>
         <button class="bg-green-500 hover:bg-green-600 text-black font-semibold px-4 py-2 rounded-lg transition-colors duration-300 text-sm transform hover:-translate-y-0.5">
-            <a href="/ajouter_commande">+ Nouvelle Commande</a>  
+            <!-- <a href="/ajouter_commande">+ Nouvelle Commande</a>   -->
+            <a href="<?= APP_URL ?>/ajouter_commande" class="nav-item text-gray-300 hover:text-green-400">Nouvelle Commande</a>
         </button>
     </div>
 

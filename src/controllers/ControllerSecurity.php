@@ -40,6 +40,7 @@ class ControllerSecurity extends AbstractController
                     $error = "Identifiants invalides";
                     $this->renderHtml('login.php');
                 }
+                
             } else {
                     self::renderHtml('login.php');
             }

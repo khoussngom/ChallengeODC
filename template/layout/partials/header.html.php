@@ -7,13 +7,15 @@
             </div>
             <div class="flex items-center space-x-8">
                 <a href="#" class="nav-item text-gray-300 hover:text-green-400">Dashboard</a>
-                <a href="/lister_commande" class="nav-item text-gray-300 hover:text-green-400">Commandes</a>
+                <!-- <a href="/lister_commande" class="nav-item text-gray-300 hover:text-green-400">Commandes</a> -->
+                <a href="<?= APP_URL ?>/lister_commande" class="nav-item text-gray-300 hover:text-green-400">Commandes</a>
                 <a href="#" class="nav-item text-gray-300 hover:text-green-400">Clients</a>
                 <a href="#" class="nav-item text-gray-300 hover:text-green-400">Produits</a>
-                <a href="/deconnexion" class="nav-item text-gray-300 hover:text-green-400">Deconnexion</a>
+                <!-- <a href="/deconnexion" class="nav-item text-gray-300 hover:text-green-400">Deconnexion</a> -->
+                <a href="<?= APP_URL ?>/deconnexion" class="nav-item text-gray-300 hover:text-green-400">Deconnexion</a>
+
                 <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                     <span class="text-black text-sm">KN</span>
                 </div>
-            </div>
         </div>
     </nav>
