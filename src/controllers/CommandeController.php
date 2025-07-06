@@ -38,7 +38,7 @@ class CommandeController extends AbstractController
     
     public function create(): void{
         $this->requireAuth();
-        self::renderHtml('Commande/enregistrerCommande.php');
+        self::renderHtml('Commande/enregistrerCommande.php',['role'=>$_SESSION['role']]);
     }
 
     public function index(): void
@@ -48,7 +48,7 @@ class CommandeController extends AbstractController
         $pdo =Repositorie::ConnectToDatabase();
         $commandeRepo = new CommandeRepository($pdo);
         $commandes = $commandeRepo->findAllAvecDetails();
-        self::renderHtml('Commande/listerCommande.php', ['commandes' => $commandes]);
+        self::renderHtml('Commande/listerCommande.php', ['commandes' => $commandes, 'role' => $_SESSION['role']]);
     }
     
     public function validerCommande()

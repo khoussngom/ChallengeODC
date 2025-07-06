@@ -42,6 +42,9 @@ class ControllerSecurity extends AbstractController
 
                 $securite = new SecuriteServices();
                 $vendeur = $securite->login($login, $password);
+                $_SESSION['role'] = $vendeur['type'];
+
+        
 
                 if ($vendeur) {
                     session_start();
