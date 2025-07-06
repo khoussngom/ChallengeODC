@@ -38,10 +38,16 @@
                             <input
                                 type="text"
                                 name="login"
+                                value="<?= isset($login) ? htmlspecialchars($login) : '' ?>"
                                 class="w-full px-4 py-3 text-black border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50"
                                 placeholder="Votre login"
                             
                             >
+                            <?php if (!empty($errors['login'])): ?>
+                                <?php foreach ($errors['login'] as $err): ?>
+                                    <div class="text-red-600 text-xs"><?= htmlspecialchars($err) ?></div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                         
                         <div>
@@ -53,6 +59,11 @@
                                 placeholder="Mot de passe"
                             
                             >
+                            <?php if (!empty($errors['password'])): ?>
+                                <?php foreach ($errors['password'] as $err): ?>
+                                    <div class="text-red-600 text-xs"><?= htmlspecialchars($err) ?></div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                         
                         <div class="text-right">

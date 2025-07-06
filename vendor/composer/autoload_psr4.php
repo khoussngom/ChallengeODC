@@ -13,6 +13,7 @@ return array(
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'DialibatoulMarakhib\\Auchan\\' => array($baseDir . '/src'),
+    'App\\Utils\\' => array($baseDir . '/src/utils'),
     'App\\Services\\' => array($baseDir . '/src/services'),
     'App\\Repository\\' => array($baseDir . '/src/repository'),
     'App\\Public\\' => array($baseDir . '/public'),

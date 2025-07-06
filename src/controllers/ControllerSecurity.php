@@ -3,6 +3,7 @@
 namespace App\Controller;
 use App\Services\SecuriteServices;
 use App\Config\AbstractController;
+use App\Utils\Validator;
 
 
 class ControllerSecurity extends AbstractController
@@ -27,22 +28,32 @@ class ControllerSecurity extends AbstractController
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $login = $_POST['login'] ?? '';
                 $password = $_POST['password'] ?? '';
+                $validator = new Validator();
+
+                $validator->validateRequired('login', $login, 'Le login est requis.');
+                $validator->validateEmail('login', $login, 'Le login doit être un email valide.');
+                $validator->validateRequired('password', $password, 'Le mot de passe est requis.');
+
+                if (!$validator->isValid()) {
+                    $errors = $validator->getErrors();
+                    $this->renderHtml('login.php', ['errors' => $errors, 'login' => $login]);
+                    return;
+                }
 
                 $securite = new SecuriteServices();
-                $vendeur = $securite->Login($login, $password);
-                
+                $vendeur = $securite->login($login, $password);
+
                 if ($vendeur) {
                     session_start();
                     $_SESSION['user'] = $vendeur['login'];
                     header('Location: /lister_commande');
                     exit;
                 } else {
-                    $error = "Identifiants invalides";
-                    $this->renderHtml('login.php');
+                    $errors = ['login' => ['Identifiants invalides']];
+                    $this->renderHtml('login.php', ['errors' => $errors, 'login' => $login]);
                 }
-                
             } else {
-                    self::renderHtml('login.php');
+                $this->renderHtml('login.php');
             }
         }
 

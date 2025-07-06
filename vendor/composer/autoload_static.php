@@ -34,6 +34,7 @@ class ComposerStaticInitf9e9d05096502ba18b5b5a65b2b96998
         ),
         'A' => 
         array (
+            'App\\Utils\\' => 10,
             'App\\Services\\' => 13,
             'App\\Repository\\' => 15,
             'App\\Public\\' => 11,
@@ -71,6 +72,10 @@ class ComposerStaticInitf9e9d05096502ba18b5b5a65b2b96998
         'DialibatoulMarakhib\\Auchan\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'App\\Utils\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/utils',
         ),
         'App\\Services\\' => 
         array (
